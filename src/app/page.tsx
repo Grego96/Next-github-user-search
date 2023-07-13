@@ -1,14 +1,34 @@
-function Home() {
+"use client";
+
+import FormSearchUser from "@/components/FormSearchUser";
+import UserCardInfo from "@/components/UserCardInfo";
+import { useState } from "react";
+import { User } from "@/app/interfaces/user";
+
+const Home = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const getUser = async (username: string) => {
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    console.log(res);
+    if (!res.ok) {
+      setUser(null);
+      setError("User not found");
+      return;
+    }
+    setUser(await res.json());
+    setError(null);
+  };
+
   return (
     <>
-      <form>
-        <span>icono</span>
-        <input type="text" />
-        <button>Buscar User</button>
-      </form>
-      <article>todo el chamullo de la pagina</article>
+      <FormSearchUser getUser={getUser} />
+      {user && <UserCardInfo user={user} />}
+      {error && (
+        <div className="rounded-lg bg-red-500 p-4 text-white">{error}</div>
+      )}
     </>
   );
-}
-
+};
 export default Home;
