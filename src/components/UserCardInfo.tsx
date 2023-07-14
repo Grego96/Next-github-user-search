@@ -4,6 +4,7 @@ import TwitterIcon from "@/components/Icons/TwitterIcon";
 import BuldingIcon from "@/components/Icons/BuldingIcon";
 import { User } from "@/app/interfaces/user";
 import Image from "next/image";
+import GithubIcon from "@/components/Icons/GitHubIcon";
 
 interface Props {
   user: User;
@@ -22,14 +23,14 @@ const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas rounded-xl bg-white p-4 shadow-md dark:bg-blue-900 dark:text-white dark:shadow-none">
       <div className="section-logo mr-3 grid h-24 w-24 place-content-center overflow-hidden rounded-full bg-gray-200 p-1 lg:mx-auto">
-        {/* <Image
+        <Image
           src={user.avatar_url}
           width={96}
           height={96}
           alt={`profile img user ${user.name}`}
           className="rounded-full"
-        /> */}
-        {/* <GithubIcon className="relative top-2 h-full w-full" /> */}
+        />
+        <GithubIcon className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
         <h2 className="text-3xl font-bold">{user.name}</h2>
