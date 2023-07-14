@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Curso APRENDE creando: APP User Search con NEXT.js 13 (App Router) + TAILWIND CSS + TYPESCRIPT
+
+## Blueweb
+
 ## Getting Started
 
 First, run the development server:

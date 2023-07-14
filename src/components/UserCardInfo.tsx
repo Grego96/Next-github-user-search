@@ -4,7 +4,6 @@ import TwitterIcon from "@/components/Icons/TwitterIcon";
 import BuldingIcon from "@/components/Icons/BuldingIcon";
 import { User } from "@/app/interfaces/user";
 import Image from "next/image";
-import GithubIcon from "@/components/Icons/GitHubIcon";
 
 interface Props {
   user: User;
@@ -30,7 +29,7 @@ const UserCardInfo = ({ user }: Props) => {
           alt={`profile img user ${user.name}`}
           className="rounded-full"
         />
-        <GithubIcon className="relative top-2 h-full w-full" />
+        {/* <GithubIcon className="relative top-2 h-full w-full" /> */}
       </div>
       <div className="section-title">
         <h2 className="text-3xl font-bold">{user.name}</h2>
